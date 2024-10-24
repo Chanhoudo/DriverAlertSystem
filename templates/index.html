@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detection - YOLOv8</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ecore+OTF:wght@400;700&display=swap');
+        body {
+            font-family: 'Ecore OTF', sans-serif;
+            background-color: #F7F3F7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #9370DB;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            color: #a69db9;
+            margin-top: 20px;
+        }
+        .video-container img {
+            color: #9370DB;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 저장 버튼 스타일 */
+        .save-btn {
+            font-family: 'Ecore OTF', sans-serif;
+            color: #ffffff;
+            margin-top: 20px;
+            background-color: #9370DB;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .save-btn:hover {
+            background-color: #d6c6ff;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Drowsiness Detection System</h1>
+
+        <!-- 카메라 스트리밍 영역 -->
+        <div class="video-container">
+            <h2>Camera Streaming</h2>
+            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Camera feed not available">
+        </div>
+
+        <!-- 이미지 저장 버튼 -->
+        <button id="save-btn" class="save-btn">이미지 저장</button>
+
+        <footer>
+            <p>
+                © 2024 Drowsiness Detection System by 
+                <span class="dev-info">roro
+                    <span class="profile">
+                        <span class="profile-item">추예진, 윤찬호, 윤홍림</span> / 
+                        <span class="profile-item">한국폴리텍대학교</span> / 
+                        <span class="profile-item">인공지능 소프트웨어</span>
+                    </span>
+                </span>. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Font Awesome for search icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
